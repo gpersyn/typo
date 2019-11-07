@@ -11,4 +11,4 @@ Feature: Create Category
     Then I should see "Categories"
     When I fill in "Name" with "Vance Refrigeration"
     And I press "Save"
-    And I should see "Vance Refrigeration"
+    Then I should see "Vance Refrigeration"
