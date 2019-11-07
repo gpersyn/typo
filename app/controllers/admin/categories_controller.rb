@@ -25,10 +25,10 @@ class Admin::CategoriesController < Admin::BaseController
 
   def new_or_edit
     @categories = Category.find(:all)
-    if params[:id] == nil #Bug was that if the page wasn't created it wouldn't have an id
-      @category = Category.new
+    if params[:id] != nil #Bug was that if the page wasn't created it wouldn't have an id
+       @category = Category.find(params[:id])
     else
-      @category = Category.find(params[:id])
+      @category = Category.new
     end
       
     @category.attributes = params[:category]
